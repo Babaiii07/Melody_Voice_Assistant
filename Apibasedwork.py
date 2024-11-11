@@ -20,6 +20,20 @@ def aiProcess(prompt):
     
     except Exception as e:
         return f"An exception occurred: {str(e)}"
+    
+def listen_for_voiceChat():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = r.listen(source)
+        print("Recognizing...")
+    try:
+        text = r.recognize_google(audio)
+        print("You said: " + text)
+        return text
+    except sr.UnknownValueError:
+        print("Could not understand the audio")
+        return ""
 
 def take_name_city():
     r = sr.Recognizer()
