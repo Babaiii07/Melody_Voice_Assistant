@@ -1,19 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "web_interface.py",
-        "use": "@vercel/python",
-        "config": {
-          "maxDuration": 10
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/web_interface.py"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "web_interface.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.10"
   }
-  
+}
