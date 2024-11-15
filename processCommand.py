@@ -236,6 +236,7 @@ def messages(text):
                 speak("Email sent...")
                 print("Email sent...")
 
+
     elif "lets" in command or "chat" in command:
         os.environ["AI21_API_KEY"] = "qjppcwCa162aacuFa5YzBu1aNPZ7ifus"
         client = AI21Client()
